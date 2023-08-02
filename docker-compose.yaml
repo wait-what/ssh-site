@@ -1,0 +1,11 @@
+version: '3'
+
+services:
+  ssh:
+    build: .
+    ports:
+      - 2222:22
+    volumes:
+      - ./banner.txt:/srv/banner.txt:ro
+      - ./content:/srv/content:ro
+      - ./hostkeys:/etc/dropbear:ro
